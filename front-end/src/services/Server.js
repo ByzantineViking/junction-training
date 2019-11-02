@@ -1,9 +1,8 @@
 const axios = require('axios').default;
 
-async function getData(){
+export async function getData(){
     const response = await axios.get('http://open-api.myhelsinki.fi/v1/places/?tags_filter=Restaurant')
-    console.log(response)
+    return response.data.data.map(z => z.location))
 }
 
-
-getData()
+export default location services
