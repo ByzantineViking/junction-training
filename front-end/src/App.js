@@ -9,8 +9,6 @@ import museum from './resources/museum.png'
 
 const App = () => {
 
-  const position = [65.505, 30.09];
-
   const Helsinki = [60.170833, 24.9375];
   
   const [markers, setMarkers] = useState([]);
