@@ -20,9 +20,14 @@ const App = () => {
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
         {markers.map(marker => {
-          return <Marker key={marker.id} position={[marker.location.lat, marker.location.lon]}>
-            <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
-          </Marker>
+          return (
+            <Marker key={marker.id} position={[marker.location.lat, marker.location.lon]}>
+              <Popup>
+                <h4>{marker.name.fi}</h4>
+                <a href={marker.info_url} target='_blank' rel="noopener noreferrer">{marker.info_url}</a>
+              </Popup>
+            </Marker>
+          )
         })}
       </Map>
     </div>
