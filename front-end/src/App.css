@@ -54,7 +54,7 @@ green
 }
 .grid{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   height: 100%;
   column-gap: 20px;
@@ -64,7 +64,7 @@ green
 }
 .grid > div {
   padding: 10px;
-  background-color: black;
+  background-color: #18181E;
   color: #DEC79B;
   font-size: 12px;
   min-height: 100px;
@@ -76,8 +76,16 @@ green
   border: 1px  solid #18181E;
 }
 
+.header {
+  grid-column: 1 / 3
+}
+
+.filters {
+
+}
+
 
 #Map {
   height: 90vh;
-  width: 500px;
+  width: 1000px;
 }

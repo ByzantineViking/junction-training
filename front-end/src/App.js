@@ -1,6 +1,9 @@
 import React from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import './App.css';
+import restaurant from './resources/restaurant.png'
+import museum from './resources/museum.png'
+
 
 const App = () => {
 
@@ -33,24 +36,21 @@ const App = () => {
             </Marker>
           </Map>
           <div className='grid'>
-            <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            <div className='header'>
+            I'm in the mood for...
+            
             </div>
-            <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-            <div>
-              Lorem
-            </div>
-            <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            </div>
-            <div>
-              Lorem
-            </div>
-            <div>
-              Lorem
+            <div className='filters'>
+                <div>
+                  <input type='image' src={restaurant} style={{width:"40px"}}></input>
+                  
+                </div>
+                <div>
+                  Museums
+                </div>
+                <div>
+                  Stores
+                </div>
             </div>
           </div>
         </div>
