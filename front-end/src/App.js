@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import { getData } from './services/Server';
+import { places } from './mockLocations';
 import './App.css';
 
 const App = () => {
@@ -9,18 +9,18 @@ const App = () => {
   
   const [markers, setMarkers] = useState([]);
   useEffect(() => {
-    getData().then(response => setMarkers(response))
+    setMarkers(places.data);
   }, []);
   return (
     <div className="App">
       <h2 className='AppHeader'>Ran Ranin karttapalvelut</h2>
       <Map id='Map' center={Helsinki} zoom={13}>
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+          url='https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=fue2uCQRMjY6rZxp3yEq'
+          attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
         {markers.map(marker => {
-          return <Marker position={[marker.lon, marker.lat]}>
+          return <Marker key={marker.id} position={[marker.location.lat, marker.location.lon]}>
             <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
           </Marker>
         })}
