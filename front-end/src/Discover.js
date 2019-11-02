@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { places } from './mockLocations';
-import restaurant from './resources/restaurant.png';
-import museum from './resources/museum.png';
+import restaurant from './resources/restaurant.png'
+import museum from './resources/museum.png'
+import shopping from './resources/shopping.png'
 import './App.css'
 
 const Discover = () => {
@@ -17,35 +18,37 @@ const Discover = () => {
     
     return (
         <div className='leftRight'>
-            <Map id='Map' center={Helsinki} zoom={13}>
-                <TileLayer
-                  url='https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=fue2uCQRMjY6rZxp3yEq'
-                  attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
-                />
-                {markers.map(marker => {
-                    return (
-                        <Marker key={marker.id} position={[marker.location.lat, marker.location.lon]}>
-                            <Popup>
-                                <h4>{marker.name.fi}</h4>
-                                <a href={marker.info_url} target='_blank' rel="noopener noreferrer">{marker.info_url}</a>
-                            </Popup>
-                        </Marker>
-                    )
-                })}
-            </Map>
+            <div style={{borderRight:"2px solid #18181E"}}>
+                <Map id='Map' center={Helsinki} zoom={13}>
+                    <TileLayer
+                    url='https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=fue2uCQRMjY6rZxp3yEq'
+                    attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+                    />
+                    {markers.map(marker => {
+                        return (
+                            <Marker key={marker.id} position={[marker.location.lat, marker.location.lon]}>
+                                <Popup>
+                                    <h4>{marker.name.fi}</h4>
+                                    <a href={marker.info_url} target='_blank' rel="noopener noreferrer">{marker.info_url}</a>
+                                </Popup>
+                            </Marker>
+                        )
+                    })}
+                </Map>
+            </div>
             <div className='grid'>
                 <div className='header'>
                     I'm in the mood for...
                 </div>
                 <div className='filters'>
                     <div>
-                        <input type='image' src={restaurant} style={{width:"40px"}}></input>
+                        <input type='image' src={restaurant} style={{width:"75px"}}alt='restaurant'></input>
                     </div>
                     <div>
-                        Museums
+                        <input type='image' src={museum} style={{width:"75px"}} alt='museum'></input>
                     </div>
                     <div>
-                        Stores
+                        <input type='image' src={shopping} style={{width:"75px"}} alt='shopping'></input>
                     </div>
                 </div>
             </div>
