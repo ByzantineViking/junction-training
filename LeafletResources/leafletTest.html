@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <style>
+        #map {position:absolute; top: 0 ; bottom: 0;left: 0;right: 0;}
+    </style>
+</head>
+
+<body>
+    <div id = "map" style="height: 500px; width:1000px" ></div>
+    <script>
+        var map = L.map('map').setView([60.1635, 24.9384], 13);
+        L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=fue2uCQRMjY6rZxp3yEq', {
+            attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        }).addTo(map);
+
+        var markers = [[61.162253,24.922169],
+            [62.155534,24.924101],
+            [63.147018, 24.913987],
+            [64.151775,24.903101],
+            [65.155356,24.901513],
+            [66.158474,24.90265],
+            [67.161862,24.914016]]
+
+            markers.forEach(function(element) {
+                L.marker(element).addTo(map)
+            })
+
+        var marker = L.marker([60.1635, 24.9384]).addTo(map);
+
+        var circle = L.circle([60.17476345060895, 24.983906705620225], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 500
+        }).addTo(map)
+
+        var polygon = L.polygon([
+            [60.162253,24.922169],
+            [60.155534,24.924101],
+            [60.147018, 24.913987],
+            [60.151775,24.903101],
+            [60.155356,24.901513],
+            [60.158474,24.90265],
+            [60.161862,24.914016]
+        ]).addTo(map)
+
+        polygon.bindPopup("<b>Jätkäsaaren yritykset</b><br>Tänne töihin?");
+    </script>
+</body>
+
+
+</html>
