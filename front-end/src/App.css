@@ -1,11 +1,90 @@
-.App {
-  text-align: left;
-  margin: 10px 10px;
+
+div {
+  font-family: 'Merriweather', serif;
 }
-.AppHeader {
+/*
+#150734
+#0F2557
+#28559A
+#3778C2
+#4B9FE1
+#63BCE5
+#7ED5EA
+
+*/
+/*
+grey
+#dddfd4
+yellow
+#fae596
+lagoone
+#3fb0ac
+green
+#173e43
+*/
+
+.topBottom {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  padding: 25px 20px;
+  background-color: #18181E;
+  color: #DEC79B;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 10vh;
+}
+.controls{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.control {
+  margin: 0 10px;
+}
+
+.leftRight {
+  display: flex;
+  flex-direction: row;
+  background-color: #DEC79B;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  column-gap: 20px;
+  row-gap: 10px;
   padding: 10px 10px;
+  background-color: #DEC79B;
 }
+.grid > div {
+  padding: 10px;
+  background-color: #18181E;
+  color: #DEC79B;
+  font-size: 12px;
+  min-height: 100px;
+}
+
+.grid > div:nth-child(3n - 2) {
+  background-color: #DEC79B;
+  color: #18181E;
+  border: 1px  solid #18181E;
+}
+
+.header {
+  grid-column: 1 / 3
+}
+
+.filters {
+
+}
+
 #Map {
-  height: 300px;
-  width: 500px;
+  height: 90vh;
+  width: 1000px;
 }
