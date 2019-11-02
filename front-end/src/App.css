@@ -5,3 +5,7 @@
 .AppHeader {
   padding: 10px 10px;
 }
+#Map {
+  height: 300px;
+  width: 500px;
+}
