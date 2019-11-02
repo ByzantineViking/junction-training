@@ -7,17 +7,53 @@ const App = () => {
   const position = [65.505, 30.09];
 
   return (
-    <div className="App">
-      <h2 className='AppHeader'>Ran Ranin karttapalvelut</h2>
-      <Map id='Map' center={position} zoom={13}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-        />
-        <Marker position={position}>
-          <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
-        </Marker>
-      </Map>
+    
+      <div className="topBottom">
+        <div className='top'>
+          <div>
+            Your Helsinki adventure
+          </div>
+          <div className='controls'>
+            <div className='control'>
+              Home
+            </div>
+            <div className='control'>
+              Discover
+            </div>
+          </div>
+        </div>
+        <div className='leftRight'>
+          <Map id='Map' center={position} zoom={13}>
+            <TileLayer
+              url='https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=fue2uCQRMjY6rZxp3yEq'
+              attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+            />
+            <Marker position={position}>
+              <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
+            </Marker>
+          </Map>
+          <div className='grid'>
+            <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            </div>
+            <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+            <div>
+              Lorem
+            </div>
+            <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            </div>
+            <div>
+              Lorem
+            </div>
+            <div>
+              Lorem
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
