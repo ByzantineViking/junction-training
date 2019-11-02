@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "json-server": "^0.15.1",
     "leaflet": "^1.5.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
